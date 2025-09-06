@@ -11,7 +11,7 @@ ARG LC_ALL=en_US.utf8
 ARG QT_VERSION=6.8.0
 ARG QT_PATH=/opt/Qt
 
-ARG ADDITIONAL_PACKAGES="sudo git openssh-client ca-certificates curl python3 openjdk-17-jdk-headless locales build-essential"
+ARG ADDITIONAL_PACKAGES="sudo git openssh-client ca-certificates curl python3 openjdk-17-jdk-headless locales build-essential cmake"
 
 ARG ANDROID_NATIVE_API_LEVEL=34
 ARG SDK_PLATFORM=android-${ANDROID_NATIVE_API_LEVEL}
