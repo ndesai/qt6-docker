@@ -29,11 +29,16 @@ echo
 echo '--> Download & install the Qt library using aqt'
 echo
 
+# Qt modules
+QT_MODULES="all"
 # Host Qt needed for cross-compilation
-aqt install-qt -O "$QT_PATH" linux desktop "$QT_VERSION" linux_gcc_64
+aqt install-qt -O "$QT_PATH" linux desktop "$QT_VERSION" linux_gcc_64 -m "$QT_MODULES"
 for abi in armv7 arm64_v8a x86 x86_64; do
-    aqt install-qt -O "$QT_PATH" linux android "$QT_VERSION" "android_$abi"
+    aqt install-qt -O "$QT_PATH" linux android "$QT_VERSION" "android_$abi" -m "$QT_MODULES"
 done
+echo "Listing tools:"
+aqt list-tool linux desktop
+echo "Done listing tools"
 aqt install-tool -O "$QT_PATH" linux desktop tools_cmake
 aqt install-tool -O "$QT_PATH" linux desktop tools_ninja
 
